@@ -31,7 +31,6 @@ def load_game():
         result = currency_play(difficulty)
 
     if result:
-        print(result)
         add_score(difficulty)
     return difficulty
 
