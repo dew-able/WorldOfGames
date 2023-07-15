@@ -1,20 +1,13 @@
 import random
-import os
 from time import sleep
+from Utils import Screen_cleaner
 
 
 def generate_sequence(memorydifficulty):
     randomlist = random.sample(range(1, 101), memorydifficulty)
     print("randomlist is :", randomlist)
     sleep(0.8)
-    try:
-        os.system('clear')
-    finally:
-        print("\n", "\n", "\n", "\n", "\n", "\n", "\n", "\n", "\n", "\n", "\n", "\n", "\n", "\n", "\n")
-    try:
-        os.system('cls')
-    finally:
-        print("\n", "\n", "\n", "\n", "\n", "\n", "\n", "\n", "\n", "\n", "\n", "\n", "\n", "\n", "\n")
+    Screen_cleaner()
     return randomlist
 
 

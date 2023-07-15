@@ -14,7 +14,8 @@ def load_game():
                        "like the computer\n3. Currency Roulette - try and guess the value of a random amount of USD "
                        "in ILS"))
     while choice not in [1, 2, 3]:
-        choice = int(input("Please choose a valid option:\n1. Memory Game - a sequence of numbers will appear for 1 "
+        print("Please choose a valid option")
+        choice = int(input("1. Memory Game - a sequence of numbers will appear for 1 "
                            "second and you have to guess it back \n2. Guess Game - guess a number and see if you chose "
                            "like the computer\n3. Currency Roulette - try and guess the value of a random amount of USD"
                            "in ILS"))
@@ -34,5 +35,3 @@ def load_game():
         add_score(difficulty)
     return difficulty
 
-
-load_game()

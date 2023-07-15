@@ -11,10 +11,10 @@ def get_money_interval():
     if currencyapi.status_code == 200:
         data = currencyapi.json()
     else:
-        print("request failed, error code:", currencyapi.status_code)
+        print("request failed, api error code:", currencyapi.status_code)
     usdtoils = data['data']['ILS']
     totalvalue = usdamount * float(usdtoils)
-    print('generated usdamount', usdamount)
+    print('How much are', usdamount, "dollars in ils?")
     return totalvalue
 
 
@@ -26,14 +26,13 @@ def get_guess_from_user():
 
 def play(difficulty):
     totalvalue = get_money_interval()
-    negativeinterval = totalvalue-5-difficulty
-    positiveinterval = totalvalue+5-difficulty
+    negativeinterval = totalvalue - 5 - difficulty
+    positiveinterval = totalvalue + 5 - difficulty
     userguess = get_guess_from_user()
-    if math.isclose(negativeinterval, userguess) or math.isclose(positiveinterval, userguess) or (negativeinterval <= userguess <= positiveinterval):
-        print("Congratulations, you won")
+    if math.isclose(negativeinterval, userguess) or math.isclose(positiveinterval, userguess) or (
+            negativeinterval <= userguess <= positiveinterval):
+        print("Congratulations you won!")
         return True
     else:
         print("You lost, better luck next time")
         return False
-
-

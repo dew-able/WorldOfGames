@@ -1,15 +1,16 @@
 import random
 
 
-def generate_number(guessdifficulty):
-    secret_number = random.randint(1, guessdifficulty)
-    return secret_number
-
-
 def get_guess_from_user():
-    user_number = input("Please enter your guess")
+    user_number = input("Please enter a guess between 1 and the difficulty you chose")
     print("Your guess is:", user_number)
     return int(user_number)
+
+
+def generate_number(guessdifficulty):
+    secret_number = random.randint(1, guessdifficulty)
+    print("The number the machine chose was:", secret_number)
+    return secret_number
 
 
 def compare_results(user_number, secret_number):

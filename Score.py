@@ -3,8 +3,8 @@ def add_score(difficulty):
     try:
         with open('Scores.txt', 'r') as readfile:
             currentscore = readfile.read().strip()
+            intcurrentscore = int(currentscore)
         with open('Scores.txt', 'w') as scorefile:
-                    intcurrentscore = int(currentscore)
                     newscore = intcurrentscore + POINTS_OF_WINNING
                     scorefile.write(str(newscore))
     except:
